@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&family=Montserrat:wght@700&display=swap');
+
+.content {
+	color: white;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 50vw;
+	height: 11vh;
+	font-family: 'Montserrat', sans-serif;
+}
+.ul {
+	display: flex;
+	justify-content: space-between;
+}
+
+.li {
+	list-style-type: none;
+	display: flex;
+	align-items: center;
+	padding: 4px 8px;
+	font-family: 'Montserrat', sans-serif;
+	color: white;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 17px;
+	cursor: pointer;
+}
+.blog {
+	display: flex;
+	justify-content: space-between;
+}
+.line {
+	border: 1px solid rgba(241, 241, 241, 0.27);
+	height: 1px;
+	position: relative;
+	top: 39px;
+	width: 620px;
+	text-align: center;
+}
+.btn {
+	width: 95px;
+	height: 26px;
+	border: none;
+	background: rgba(255, 255, 255, 0.3);
+	border-radius: 3px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	color: white;
+	cursor: pointer;
+	font-family: 'Montserrat', sans-serif;
+}
+.image {
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+	font-family: 'Montserrat', sans-serif;
+}
+.user {
+	width: 15px;
+	height: 15px;
+	background: none;
+	cursor: pointer;
+	font-family: 'Montserrat', sans-serif;
+}
+
+/* .content {
+	display: flex;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	background-color: #db524d;
+	color: white;
+	margin: 0 auto;
+    flex-direction: column;
+}
+
+img {
+	color: black;
+	width: 15px;
+	height: 15px;
+    padding-right: 4.5px;
+}
+.p {
+	width: 143px;
+	height: 29px;
+	size: 24px;
+	line-height: 29, 26px;
+	color: white;
+	font-weight: bold;
+	font-style: normal;
+}
+.ul {
+	display: flex;
+    flex-direction: row;
+    width: inherit;
+}
+.ul li {
+    list-style: none;
+}
+.btn{
+    width: 95px;
+	height: 26px;
+    border: none;
+    display: flex;
+}
+.line{
+    color: black;
+    width: 200px;
+    display: block;
+    background-color: black;
+}
+.blog{
+    background-color: blue;
+} */
