@@ -21,7 +21,7 @@ function CustomTimer(time) {
 			setTimeLeft((timeLeft) => {
 				if (timeLeft > 0) return timeLeft - 1
 			})
-		}, 1000)
+		}, 100)
 	}, [])
 
 	const stopTimer = useCallback(() => {
@@ -29,6 +29,7 @@ function CustomTimer(time) {
 		setIsRunning(false)
 		clearInterval(intervalRef.current)
 		intervalRef.current = null
+		setIsChecked(false)
 	},[])
 
 	useEffect(() => {

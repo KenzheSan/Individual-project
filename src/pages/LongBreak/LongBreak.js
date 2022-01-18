@@ -49,14 +49,19 @@ const LongBreak = () => {
 	const disptach = useDispatch()
 
 	useEffect(() => {
-		if (isInterValIsStarted) {
-			if (isAutoStartPomodor) {
-				if (isAutoStartShortBreak) {
-					startTimer()
-				}	
-			}
+		if (
+			isAutoStartPomodor &&
+			isInterValIsStarted &&
+			isAutoStartShortBreak
+		) {
+			setTimeout(startTimer, 2000)
 		}
-	}, [isAutoStartPomodor, isAutoStartShortBreak, isInterValIsStarted, startTimer])
+	}, [
+		isAutoStartPomodor,
+		isAutoStartShortBreak,
+		isInterValIsStarted,
+		startTimer,
+	])
 
 	useEffect(() => {
 		const newRound = async () => {
@@ -74,7 +79,7 @@ const LongBreak = () => {
 		}
 		newRound()
 	}, [disptach, history, initialRound, setIsChecked, timeLeft])
-	
+
 	const messageToUser = async () => {
 		if (window.confirm(CONFIRM)) {
 			await setIsChecked(false)
@@ -84,9 +89,6 @@ const LongBreak = () => {
 		}
 	}
 
-	const switchBtn = () => {
-		isRunning ? stopTimer() : startTimer()
-	}
 	return (
 		<Fragment>
 			<Prompt when={isChecked} message={RESETCONFIRM} />
@@ -100,9 +102,15 @@ const LongBreak = () => {
 					<span>{seconds}</span>
 				</h1>
 				<div>
-					<button className={`${styles.btn}`} onClick={switchBtn}>
-						{isRunning ? 'PAUSE' : 'START'}
-					</button>
+					{isRunning ? (
+						<button className={styles.btn} onClick={stopTimer}>
+							STOP
+						</button>
+					) : (
+						<button className={styles.btn} onClick={startTimer}>
+							START
+						</button>
+					)}
 					{isRunning && (
 						<img
 							className={styles.next}

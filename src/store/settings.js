@@ -6,9 +6,9 @@ const initialState = {
     [INTERVALOFTIMERS] : 5,
     [INTERVALISSTARTED] : false,
     [ROUND] : 0,
-    [POMODORO]: 25,
-    [SHORT_BREAK]: 5,
-    [LONG_BREAK]: 10,
+    [POMODORO]: 1,
+    [SHORT_BREAK]: 1,
+    [LONG_BREAK]: 1,
 }
 
 
@@ -18,17 +18,13 @@ const settings = createSlice({
     initialState: initialState,
     reducers: {
         updateClock(state,action){
-            const { longBreakTime,shortBreakTime,pomodoroTime,setInterval} = action.payload
+            const { longBreakTime,shortBreakTime,pomodoroTime,setInterval,isAutoStartPomodoro,isAutoStartShortBreak} = action.payload
             state[POMODORO] = pomodoroTime  
             state[SHORT_BREAK] = shortBreakTime
             state[LONG_BREAK] = longBreakTime
             state[INTERVALOFTIMERS] = setInterval
-        },
-        autoStartPomodoro(state) {
-            state[AUTOSTARTPOMODOR] = !state[AUTOSTARTPOMODOR]
-        },
-        autoStartBreaks(state) {
-            state[AUTOSTARTBREAKS] = !state[AUTOSTARTBREAKS]
+            state[AUTOSTARTPOMODOR] = isAutoStartPomodoro
+            state[AUTOSTARTBREAKS] = isAutoStartShortBreak
         },
         clearRoundInterval(state){
             state[ROUND] = 0

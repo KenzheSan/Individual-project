@@ -7,13 +7,17 @@ import { useEffect } from 'react'
 import { Prompt } from 'react-router-dom'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import CustomTimer from '../../store/custom_timer'
-import { CONFIRM,RESETCONFIRM } from '../../store/constants'
+import { CONFIRM, RESETCONFIRM } from '../../store/constants'
 
 const ShortBreak = () => {
+	const {
+		short_break,
+		intervalIsStarted,
+		intervalOfTimers,
+		autostartbreaks,
+	} = useSelector((state) => state.timeSettings)
 
-	const {short_break ,intervalIsStarted ,intervalOfTimers,autostartbreaks} = useSelector((state)=> state.timeSettings)
-
-	const {		
+	const {
 		isChecked,
 		setIsChecked,
 		startTimer,
@@ -24,13 +28,13 @@ const ShortBreak = () => {
 		timeLeft,
 		isRunning,
 	} = CustomTimer(short_break)
-	
+
 	const history = useHistory()
 
 	useEffect(() => {
 		if (intervalIsStarted) {
 			if (autostartbreaks) {
-				startTimer()
+				setTimeout(startTimer, 2000)
 			}
 		}
 	}, [autostartbreaks, intervalOfTimers, intervalIsStarted, startTimer])
@@ -47,25 +51,22 @@ const ShortBreak = () => {
 		newRound()
 	}, [history, intervalOfTimers, setIsChecked, timeLeft])
 
-	const messageToUser = async() => {
-		if(window.confirm(CONFIRM)){	
+	const messageToUser = async () => {
+		if (window.confirm(CONFIRM)) {
 			history.replace('/pomodoro')
 			await setIsChecked(false)
-		}else{
+		} else {
 			return
 		}
-		
 	}
 
-	const switchBtn = () => {
-		isRunning ? stopTimer() : startTimer()
-	}
+
 
 	return (
 		<Fragment>
 			<Prompt when={isChecked} message={RESETCONFIRM} />
 			<div className={classes.absolute}>
-			<Progress percent={percentage} />
+				<Progress percent={percentage} />
 			</div>
 			<div className={classes.shortbreak}>
 				<h1 className={classes.time}>
@@ -74,11 +75,22 @@ const ShortBreak = () => {
 					<span>{seconds}</span>
 				</h1>
 				<div>
-					<button className={classes.btn} onClick={switchBtn}>
-						{isRunning ? 'PAUSE' : 'START'}
-					</button>
+					{isRunning ? (
+						<button className={classes.btn} onClick={stopTimer}>
+							STOP
+						</button>
+					) : (
+						<button className={classes.btn} onClick={startTimer}>
+							START
+						</button>
+					)}
 					{isRunning && (
-						<img className={classes.next} src={next} onClick={messageToUser} alt='/' />
+						<img
+							className={classes.next}
+							src={next}
+							onClick={messageToUser}
+							alt='/'
+						/>
 					)}
 				</div>
 			</div>
