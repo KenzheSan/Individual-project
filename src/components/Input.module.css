@@ -1,0 +1,48 @@
+.select:invalid {
+	color: gray;
+	
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type="radio"] {
+	width: 20px;
+	height: 20px;
+	border: 1px solid #F34901;
+	border-radius: 50%;
+	background-clip: content-box;
+	padding: 3px;
+    accent-color:  #f34901;
+    box-sizing: border-box;
+}
+
+.select:invalid {
+	color: gray;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type='time']::-webkit-calendar-picker-indicator {
+	background: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+
+}
+
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 0; 
+}
+
+
+

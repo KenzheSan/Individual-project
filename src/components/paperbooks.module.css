@@ -1,0 +1,145 @@
+
+.hasError {
+	border: 1px solid red;
+}
+.noError {
+	border: 1px solid #c4c4c4;
+}
+.sideLabel {
+	display: flex;
+	flex-direction: column;
+	text-align: start;
+	padding-bottom: 30px;
+}
+
+.sideLabel select {
+	color: #222222;
+	padding: 10px 18px;
+	text-align: start;
+	border: 1px solid #c4c4c4;	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background-image: url('../assets/img/arrow.png');
+	background-repeat: no-repeat;
+	background-position: calc(100% - 20px) center;
+	background-size: 20px;
+}
+
+.sideLabel select:not([value='Литература, роман, стихи...']):not(:focus){
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 130%;
+	color: #969696;
+}
+
+
+.sideLabel input {
+	color: #222222;
+	padding: 10px 18px;
+	text-align: start;
+}
+.sideLabel span {
+	padding-bottom: 12px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 130%;
+}
+.sideLabel textarea {
+	border: 1px solid #c4c4c4;
+	box-sizing: border-box;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 130%;
+	text-align: start;
+	color: #969696;
+	padding: 16px 15px 10px 16px;
+	width: 753px;
+	height: 199px;
+}
+.sideLabel p {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 22px;
+	text-align: end;
+	color: #b5b5b5;
+	margin: 0;
+	padding-top: 10px;
+}
+/* ----------------------------------------------------------------------------------------- */
+.leftSection {
+	display: flex;
+	justify-content: space-between;
+	padding-left: 42px;
+	margin: 0;
+}
+
+.rigthLabel {
+	display: flex;
+	flex-direction: column;
+	text-align: start;
+	padding-bottom: 30px;
+}
+.rigthLabel input {
+	border: 1px solid #c4c4c4;
+	padding: 10px 18px 12px;
+	text-align: end;
+}
+.rigthLabel select {
+	color: #222222;
+	padding: 10px 18px;
+	text-align: start;
+	border: 1px solid #c4c4c4;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background-image: url('../assets/img/arrow.png');
+	background-repeat: no-repeat;
+	background-position: calc(100% - 20px) center;
+	background-size: 20px;
+}
+
+.rigthLabel span {
+	margin-bottom: 12px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 130%;
+	text-align: start;
+	color: #222222;
+}
+.settingOfBook {
+	display: flex;
+	flex-direction: column;
+	padding-right: 42px;
+}
+.settingOfPrice {
+	display: flex;
+	flex-direction: column;
+}
+.bestseller span {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 130%;
+	color: #222222;
+	padding-left: 10px;
+}
+.bestseller {
+	width: 124px;
+	height: 26px;
+	text-align: start;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.bestseller input {
+	width: 26px;
+	height: 26px;
+	margin: 0;
+	border: 1px solid #c4c4c4;
+	box-sizing: border-box;
+}

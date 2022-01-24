@@ -1,0 +1,152 @@
+/* Скрываем элемент <input type="file" /> */
+.uploadImageSection {
+	display: flex;
+    justify-content: space-between;
+}
+.imageUploadRules {
+	background-color: #ececec;
+    display: flex;
+    text-align: start;
+    width: 449px;
+    height: 312px;
+}
+
+.rullsTextContent{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 24px 40px 25px;
+}
+
+
+.publication {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 130%;
+	color: #222222;
+    padding-bottom: 20px;
+    margin: 0;
+}
+ul{
+    display: flex;  
+    flex-direction: column;
+    margin: 0;
+    padding-left: 20px;
+}
+
+ul li span{
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 19px;
+    text-align: start;
+    display: flex;  
+}
+
+
+
+ul > li
+{
+    color: #F34901;
+    padding-bottom: 25px;
+}
+ul > li > span
+{
+    color: #222222;
+}
+
+
+
+.imagesMustBe {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 22px;
+	color: #222222;
+    margin: 0;
+    padding-bottom: 22px;
+}
+
+
+input[type='file'] {
+	display: none;
+}
+.custom {
+	cursor: pointer;
+	width: 235px;
+	height: 312px;
+	background-image: url('../assets/img/Vector.png');
+	background-repeat: no-repeat;
+	background-size: 71px;
+	background-color: #ececec;
+	display: flex;
+	align-items: flex-end;
+	background-position: center;
+}
+.imageblog {
+	display: flex;
+	width: 735px;
+}
+.adminBlog {
+	width: 1280px;
+	margin: 0 auto;
+	height: 1709px;
+}
+.span {
+	color: #969696;
+	font-size: 14px;
+	line-height: 130%;
+	padding-left: 36px;
+	padding-right: 36px;
+	padding-bottom: 26px;
+	text-align: center;
+}
+.uploadedBook {
+	padding-top: 32px;
+	padding-left: 38px;
+	padding-right: 35px;
+	padding-bottom: 43px;
+	width: 162px;
+	height: 237px;
+}
+.mainImage {
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 130%;
+	text-align: center;
+	color: #969696;
+	padding-top: 17px;
+	margin: 0 0 0 0;
+}
+.labelBlog {
+	padding-right: 20px;
+}
+.type {
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 130%;
+	color: #222222;
+	margin: 0;
+	padding: 0;
+	text-align: start;
+}
+.changeFormSection {
+	display: flex;
+}
+.checkbox {
+	display: flex;
+	padding-top: 12px;
+	padding-right: 36px;
+}
+.changeTypeofBook {
+	padding-top: 76px;
+	padding-bottom: 30px;
+}
+.uploadthreeBooks {
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 130%;
+	text-align: start;
+	color: #969696;
+}
