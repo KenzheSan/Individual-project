@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const init = {
-    isLogin: true,
+    isLogin: false,
     isUser: false,
-    isVendor: false,
+    isVendor: true,
 }
 
 const isSignUp = createSlice({
