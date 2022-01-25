@@ -2,9 +2,10 @@ import css from './paperbooks.module.css'
 import { useForm } from 'react-hook-form'
 import WrapperOfForms from './WrapperOfForm'
 import Input from './Input'
-const Papperbook = (props) => {
-	const {onSubmit} = props
 
+
+const Papperbook = (props) => {
+	const { onSubmit } = props
 
 	const {
 		register,
@@ -14,19 +15,20 @@ const Papperbook = (props) => {
 
 	const submitHandler = (event) => {
 		event.preventDefault()
-		
-
 
 		handleSubmit(onSubmit)
 	}
 
 	return (
 		<WrapperOfForms>
-			<section className={css.rightSection} onSubmit={submitHandler}>
+			<div className={css.rightSection} onSubmit={submitHandler}>
 				<label className={css.sideLabel}>
 					<span>Название книги</span>
 					<Input
-						{...register('nameOfBook', { required: true, min: 1 })}
+						{...register('nameOfBook', {
+							required: true,
+							min: 1,
+						})}
 						type='text'
 						placeholder='Напишите полное название книги'
 						className={
@@ -48,12 +50,16 @@ const Papperbook = (props) => {
 				<label className={css.sideLabel}>
 					<span>Выберите жанр</span>
 					<select
-						{...register('janr',{required: true, })}
+						{...register('janr', { required: true })}
 						required
 						defaultValue='Литература, роман, стихи...'
 						className={css.select}
 					>
-						<option value='Литература, роман, стихи...' disabled  hidden>
+						<option
+							value='Литература, роман, стихи...'
+							disabled
+							hidden
+						>
 							Литература, роман, стихи...
 						</option>
 						<option value='grapefruit'>Литература</option>
@@ -65,19 +71,26 @@ const Papperbook = (props) => {
 				<label className={css.sideLabel}>
 					<span>Издательство</span>
 					<Input
-						{...register('izdatelstvo',{required: true ,minLength: 3})}
+						{...register('izdatelstvo', {
+							required: true,
+							minLength: 3,
+						})}
 						type='text'
 						placeholder='Напишите название издательства'
-						className={errors.izdatelstvo ? css.hasError : css.noError}
+						className={
+							errors.izdatelstvo ? css.hasError : css.noError
+						}
 					/>
 				</label>
 				<label className={css.sideLabel}>
 					<span>О книге</span>
 					<textarea
-						{...register('aboutBook',{required: true })}
+						{...register('aboutBook', { required: true })}
 						placeholder='Напишите о книге'
 						minLength='10'
-						className={errors.aboutBook ? css.hasError : css.noError}
+						className={
+							errors.aboutBook ? css.hasError : css.noError
+						}
 					></textarea>
 					<p>0/1234</p>
 				</label>
@@ -90,8 +103,9 @@ const Papperbook = (props) => {
 					></textarea>
 					<p>0/9234</p>
 				</label>
-			</section>
-			<section className={css.leftSection}>
+				<button className={css.buttonForAdminPage}>Отправить</button>
+			</div>
+			<div className={css.leftSection}>
 				<div className={css.settingOfBook}>
 					<label className={css.rigthLabel}>
 						<span>Язык</span>
@@ -100,7 +114,7 @@ const Papperbook = (props) => {
 							className={css.select}
 							required
 						>
-							<option value='' disabled  hidden>
+							<option value='' disabled hidden>
 								Русский
 							</option>
 							<option value='grapefruit'>Русский</option>
@@ -141,7 +155,6 @@ const Papperbook = (props) => {
 							placeholder='гг'
 						/>
 					</label>
-
 					<label className={css.rigthLabel}>
 						<span>Кол-во книг</span>
 						<Input
@@ -158,9 +171,9 @@ const Papperbook = (props) => {
 							placeholder='%'
 						/>
 					</label>
-
+				
 				</div>
-			</section>
+			</div>
 		</WrapperOfForms>
 	)
 }

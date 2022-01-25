@@ -196,10 +196,23 @@
 	padding-left: 39px;
 }
 
-
-.uploadImageBox{
+.uploadImageBox {
 	padding: 0;
 	position: relative;
 	top: 0;
 	right: 225px;
+}
+.buttonForAdminPage {
+	position: absolute;
+	top: 380px;
+	left: 300px;
+	padding: 10px 24px;
+	width: 137px;
+	height: 42px;
+	background: #f34901;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 22px;
+	color: #ffffff;
 }

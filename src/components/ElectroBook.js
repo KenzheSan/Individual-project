@@ -59,6 +59,7 @@ const ElectroBook = () => {
 					></textarea>
 					<p>0/9234</p>
 				</label>
+				<button className={css.buttonForAdminPage}>Отправить</button>
 			</div>
 			<div className={css.containerOfSideBox}>
 				<div className={css.leftSideBox}>
@@ -86,7 +87,10 @@ const ElectroBook = () => {
 					<label className={css.customsForAudio}>
 						<p className={css.uploadImg}>
 							Загрузите PDF
-							<Input type='file' accept="application/pdf,application/vnd.ms-excel" />
+							<Input
+								type='file'
+								accept='application/pdf,application/vnd.ms-excel'
+							/>
 						</p>
 					</label>
 				</div>

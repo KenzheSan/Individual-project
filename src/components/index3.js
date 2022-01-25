@@ -5,7 +5,6 @@ import Papperbook from './paperbook'
 import css from './index.module.css'
 
 const NewPage = () => {
-	
 	const [book, setBook] = useState(false)
 	const [audio, setAudio] = useState(false)
 	const [electro, setElectro] = useState(true)
@@ -30,14 +29,13 @@ const NewPage = () => {
 		setAudio(false)
 	}
 
-
 	const onPaperBookSubmit = (data) => {
 		console.log(data)
 	}
-	
+
 	return (
-		<main className={css.adminBlog}>
-			<form>
+		<form>
+			<main className={css.adminBlog}>
 				<p className={css.uploadthreeBooks}>Загрузите 3 фото *</p>
 				<section className={css.uploadImageSection}>
 					<div className={css.imageblog}>
@@ -215,8 +213,8 @@ const NewPage = () => {
 					{audio && <AudioBook />}
 					{electro && <ElectroBook />}
 				</section>
-			</form>
-		</main>
+			</main>
+		</form>
 	)
 }
 

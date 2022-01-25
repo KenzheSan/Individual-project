@@ -209,3 +209,19 @@
 	margin: 0;
 	width: 220px;
 }
+.buttonForAdminPage{
+	padding: 10px 24px;
+	width: 137px;
+	height: 42px;
+	background: #f34901;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 22px;
+	color: #ffffff;
+	position: relative;
+	top: 40px;
+	left: 440px;
+	float:right;
+
+}

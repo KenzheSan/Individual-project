@@ -143,3 +143,20 @@
 	border: 1px solid #c4c4c4;
 	box-sizing: border-box;
 }
+.buttonForAdminPage{
+	padding: 10px 24px;
+	width: 137px;
+	height: 42px;
+	background: #f34901;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 22px;
+	color: #ffffff;
+	position: relative;
+	top: 40px;
+	left: 470px;
+	float:right;
+
+}
+

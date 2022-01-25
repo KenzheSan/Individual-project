@@ -113,6 +113,7 @@ const AudioBook = () => {
 								<Input type='file' accept='audio/mp3' />
 							</p>
 						</label>
+						<button className={css.buttonForAdminPage}>Отправить</button>
 					</div>
 				</section>
 			</section>
