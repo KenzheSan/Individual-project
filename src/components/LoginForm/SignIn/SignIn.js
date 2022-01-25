@@ -4,7 +4,9 @@ import eye from '../../../assets/img/eye.png'
 import isEye from '../../../assets/img/isEye.png'
 import classes from './SignIn.module.css'
 import { useForm } from 'react-hook-form'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import useHttp from '../../api/use-http'
+import { addBook } from '../../api/api'
 const SignIn = () => {
 	const {
 		register,
@@ -12,9 +14,20 @@ const SignIn = () => {
 		formState: { errors, isValid },
 	} = useForm({ mode: 'onChange' })
 
+	const {sendRequest,status} = useHttp(addBook) ///меняем
+
+	useEffect(()=> {
+		if(status === 'completed'){
+			alert('Добро пожаловать')
+		}
+	},[status])
 	const onSubmitClientSignUp = (data) => {
 		console.log(data)
+		sendRequest(data)
 	}
+
+
+
 	const signInError = errors.email || errors.password
 
 	const [isPasswordShown, setIsPasswordShown] = useState(false)
@@ -22,6 +35,8 @@ const SignIn = () => {
 	const togglePassword = () => {
 		setIsPasswordShown(!isPasswordShown)
 	}
+
+
 
 	return (
 		<form onSubmit={handleSubmit(onSubmitClientSignUp)}>

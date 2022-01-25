@@ -4,14 +4,27 @@ import classes from './VendorRegistration.module.css'
 import { useForm } from 'react-hook-form'
 import isEye from '../../../assets/img/isEye.png'
 import eye from '../../../assets/img/eye.png'
-import { useState } from 'react'
+import { useState ,useEffect} from 'react'
+import useHttp from '../../api/use-http'
+import { addBook } from '../../api/api'
 
 
 const VendorRegistration = () => {
 	const {register,handleSubmit ,formState: {errors,isValid},watch} = useForm({mode: 'onChange'})
+
 	const isSamePassword = watch('password')
+
+	const {sendRequest,status} = useHttp(addBook) ///меняем
+
+	useEffect(()=> {
+		if(status === 'completed'){
+			alert('Добро пожаловать')
+		}
+	},[status])
+
 	const onSubmitClientSignUp = (data) => {
 		console.log(data);
+		sendRequest(data)
 	}
 	
 	const [isPasswordShown, setIsPasswordShown] = useState(false)

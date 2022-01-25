@@ -3,8 +3,10 @@ import AuthButton from '../../ReusebleInput/ReusableButton/AuthButton'
 import InputField from '../../ReusebleInput/ReusableLabel/InputField'
 import eye from '../../../assets/img/eye.png'
 import isEye from '../../../assets/img/isEye.png'
-import { useState } from 'react'
+import { useState ,useEffect} from 'react'
 import { useForm } from 'react-hook-form'
+import useHttp from '../../api/use-http'
+import { addBook } from '../../api/api'
 
 const ClientRegistration = () => {
 	const {
@@ -16,8 +18,16 @@ const ClientRegistration = () => {
 
 	const isPassworIsSame = watch('password')
 
+	const {sendRequest,status} = useHttp(addBook) ///меняем
+
+	useEffect(()=> {
+		if(status === 'completed'){
+			alert('Добро пожаловать')
+		}
+	},[status])
+
 	const onSubmitClientSignUp = (data) => {
-		console.log(data)
+		sendRequest(data)
 	}
 
 	const [isPasswordShown, setIsPasswordShown] = useState(false)
