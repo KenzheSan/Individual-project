@@ -19,7 +19,7 @@
 	border: 1px solid #c4c4c4;	appearance: none;
 	-moz-appearance: none;
 	-webkit-appearance: none;
-	background-image: url('../assets/img/arrow.png');
+	background-image: url('../../../assets/img/arrow.png');
 	background-repeat: no-repeat;
 	background-position: calc(100% - 20px) center;
 	background-size: 20px;
@@ -96,7 +96,7 @@
 	appearance: none;
 	-moz-appearance: none;
 	-webkit-appearance: none;
-	background-image: url('../assets/img/arrow.png');
+	background-image: url('../../../assets/img/arrow.png');
 	background-repeat: no-repeat;
 	background-position: calc(100% - 20px) center;
 	background-size: 20px;

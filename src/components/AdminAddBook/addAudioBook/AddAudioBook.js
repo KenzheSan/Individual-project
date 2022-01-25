@@ -1,27 +1,27 @@
-import css from './Audiobook.module.css'
-import WrapperOfForms from './WrapperOfForm'
-import Input from './Input'
+import classes from './AddAudioBook.module.css'
+import WrapperOfForms from '../../Wrapper/WrapperOfAdminAddBook/WrapperOfForm'
+import Input from '../../ReusebleInput/InputForAddBook/Input'
 const AudioBook = () => {
 	return (
 		<WrapperOfForms>
-			<section className={css.rightSection}>
-				<label className={css.sideLabel}>
+			<section className={classes.rightSection}>
+				<label className={classes.sideLabel}>
 					<span>Название книги</span>
 					<Input
 						type='text'
 						placeholder='Напишите полное название книги'
 					/>
 				</label>
-				<label className={css.sideLabel}>
+				<label className={classes.sideLabel}>
 					<span>ФИО автора</span>
 					<Input type='text' placeholder='Напишите ФИО автора' />
 				</label>
-				<label className={css.sideLabel}>
+				<label className={classes.sideLabel}>
 					<span>Выберите жанр</span>
 					<select
 						required
 						defaultValue='Литература, роман, стихи...'
-						className={css.select}
+						className={classes.select}
 					>
 						<option
 							value='Литература, роман, стихи...'
@@ -36,7 +36,7 @@ const AudioBook = () => {
 						<option value='mango'>Трагедия</option>
 					</select>
 				</label>
-				<label className={css.sideLabel}>
+				<label className={classes.sideLabel}>
 					<span>О книге</span>
 					<textarea
 						placeholder='Напишите о книге'
@@ -45,11 +45,11 @@ const AudioBook = () => {
 					<p>0/1234</p>
 				</label>
 			</section>
-			<section className={css.leftSection}>
-				<section className={css.settingOfBook}>
-					<label className={css.rigthLabel}>
+			<section className={classes.leftSection}>
+				<section className={classes.settingOfBook}>
+					<label className={classes.rigthLabel}>
 						<span>Язык</span>
-						<select className={css.select} required>
+						<select className={classes.select} required>
 							<option value='' disabled hidden>
 								Русский
 							</option>
@@ -59,22 +59,22 @@ const AudioBook = () => {
 							<option value='mango'>Français</option>
 						</select>
 					</label>
-					<label className={css.rigthLabel}>
+					<label className={classes.rigthLabel}>
 						<span>Длительность</span>
 						<Input
 							onFocus={(e) => (e.target.type = 'time')}
-							className={css.inputOfTime}
+							className={classes.inputOfTime}
 							step='1'
 							placeholder='___ ч ___ мин ___ сек'
 						/>
 					</label>
-					<label className={css.rigthLabel}>
+					<label className={classes.rigthLabel}>
 						<span>Стоимость</span>
 						<Input type='number' placeholder='сом' />
 					</label>
 				</section>
-				<section className={css.rightSectionControl}>
-					<label className={css.rigthLabel}>
+				<section className={classes.rightSectionControl}>
+					<label className={classes.rigthLabel}>
 						<span>Год выпуска</span>
 						<Input
 							type='year'
@@ -83,37 +83,37 @@ const AudioBook = () => {
 							placeholder='гг'
 						/>
 					</label>
-					<label className={css.bestseller}>
+					<label className={classes.bestseller}>
 						<Input type='checkbox' />
 						<span>Бестселлер</span>
 					</label>
-					<label className={css.rigthLabel}>
+					<label className={classes.rigthLabel}>
 						<span>Скидка</span>
 						<Input
 							type='number'
 							placeholder='%'
 						/>
 					</label>
-					<div className={css.uploadImageBox}>
-						<p className={css.uploadFragment}>
+					<div className={classes.uploadImageBox}>
+						<p className={classes.uploadFragment}>
 							Загрузите фрагмент аудиозаписи
 						</p>
-						<label className={css.customsForAudio}>
-							<p className={css.uploadImg}>
+						<label className={classes.customsForAudio}>
+							<p className={classes.uploadImg}>
 								Загрузите аудиозапись
 								<Input type='file' accept='audio/mp3' />
 							</p>
 						</label>
-						<p className={css.uploadFullAudio}>
+						<p className={classes.uploadFullAudio}>
 							Загрузите аудиозапись
 						</p>
-						<label className={css.customsForAudio}>
-							<p className={css.uploadImg}>
+						<label className={classes.customsForAudio}>
+							<p className={classes.uploadImg}>
 								Загрузите аудиозапись
 								<Input type='file' accept='audio/mp3' />
 							</p>
 						</label>
-						<button className={css.buttonForAdminPage}>Отправить</button>
+						<button className={classes.buttonForAdminPage}>Отправить</button>
 					</div>
 				</section>
 			</section>

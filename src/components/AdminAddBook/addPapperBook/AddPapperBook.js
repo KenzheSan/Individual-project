@@ -1,8 +1,7 @@
-import css from './paperbooks.module.css'
+import classes from './AddPapperBook.module.css'
 import { useForm } from 'react-hook-form'
-import WrapperOfForms from './WrapperOfForm'
-import Input from './Input'
-
+import Input from '../../ReusebleInput/InputForAddBook/Input'
+import WrapperOfForms from '../../Wrapper/WrapperOfAdminAddBook/WrapperOfForm'
 
 const Papperbook = (props) => {
 	const { onSubmit } = props
@@ -21,8 +20,8 @@ const Papperbook = (props) => {
 
 	return (
 		<WrapperOfForms>
-			<div className={css.rightSection} onSubmit={submitHandler}>
-				<label className={css.sideLabel}>
+			<div className={classes.rightSection} onSubmit={submitHandler}>
+				<label className={classes.sideLabel}>
 					<span>Название книги</span>
 					<Input
 						{...register('nameOfBook', {
@@ -32,28 +31,28 @@ const Papperbook = (props) => {
 						type='text'
 						placeholder='Напишите полное название книги'
 						className={
-							errors.nameOfBook ? css.hasError : css.noError
+							errors.nameOfBook ? classes.hasError : classes.noError
 						}
 					/>
 				</label>
-				<label className={css.sideLabel}>
+				<label className={classes.sideLabel}>
 					<span>ФИО автора</span>
 					<Input
 						type='text'
 						placeholder='Напишите ФИО автора'
-						className={errors.FIO ? css.hasError : css.noError}
+						className={errors.FIO ? classes.hasError : classes.noError}
 						{...register('FIO', {
 							required: true,
 						})}
 					/>
 				</label>
-				<label className={css.sideLabel}>
+				<label className={classes.sideLabel}>
 					<span>Выберите жанр</span>
 					<select
 						{...register('janr', { required: true })}
 						required
 						defaultValue='Литература, роман, стихи...'
-						className={css.select}
+						className={classes.select}
 					>
 						<option
 							value='Литература, роман, стихи...'
@@ -68,7 +67,7 @@ const Papperbook = (props) => {
 						<option value='mango'>Трагедия</option>
 					</select>
 				</label>
-				<label className={css.sideLabel}>
+				<label className={classes.sideLabel}>
 					<span>Издательство</span>
 					<Input
 						{...register('izdatelstvo', {
@@ -78,23 +77,23 @@ const Papperbook = (props) => {
 						type='text'
 						placeholder='Напишите название издательства'
 						className={
-							errors.izdatelstvo ? css.hasError : css.noError
+							errors.izdatelstvo ? classes.hasError : classes.noError
 						}
 					/>
 				</label>
-				<label className={css.sideLabel}>
+				<label className={classes.sideLabel}>
 					<span>О книге</span>
 					<textarea
 						{...register('aboutBook', { required: true })}
 						placeholder='Напишите о книге'
 						minLength='10'
 						className={
-							errors.aboutBook ? css.hasError : css.noError
+							errors.aboutBook ? classes.hasError : classes.noError
 						}
 					></textarea>
 					<p>0/1234</p>
 				</label>
-				<label className={css.sideLabel}>
+				<label className={classes.sideLabel}>
 					<span>Фрагмент книги</span>
 					<textarea
 						{...register('fragment')}
@@ -103,15 +102,15 @@ const Papperbook = (props) => {
 					></textarea>
 					<p>0/9234</p>
 				</label>
-				<button className={css.buttonForAdminPage}>Отправить</button>
+				<button className={classes.buttonForAdminPage}>Отправить</button>
 			</div>
-			<div className={css.leftSection}>
-				<div className={css.settingOfBook}>
-					<label className={css.rigthLabel}>
+			<div className={classes.leftSection}>
+				<div className={classes.settingOfBook}>
+					<label className={classes.rigthLabel}>
 						<span>Язык</span>
 						<select
 							{...register('lang')}
-							className={css.select}
+							className={classes.select}
 							required
 						>
 							<option value='' disabled hidden>
@@ -123,7 +122,7 @@ const Papperbook = (props) => {
 							<option value='mango'>Français</option>
 						</select>
 					</label>
-					<label className={css.rigthLabel}>
+					<label className={classes.rigthLabel}>
 						<span>Объем</span>
 						<Input
 							{...register('obyom')}
@@ -131,7 +130,7 @@ const Papperbook = (props) => {
 							placeholder='стр.'
 						/>
 					</label>
-					<label className={css.rigthLabel}>
+					<label className={classes.rigthLabel}>
 						<span>Стоимость</span>
 						<Input
 							{...register('qurent')}
@@ -139,13 +138,13 @@ const Papperbook = (props) => {
 							placeholder='сом'
 						/>
 					</label>
-					<label className={css.bestseller}>
+					<label className={classes.bestseller}>
 						<Input {...register('best')} type='checkbox' />
 						<span>Бестселлер</span>
 					</label>
 				</div>
-				<div className={css.settingOfPrice}>
-					<label className={css.rigthLabel}>
+				<div className={classes.settingOfPrice}>
+					<label className={classes.rigthLabel}>
 						<span> Год выпуска</span>
 						<Input
 							{...register('year')}
@@ -155,7 +154,7 @@ const Papperbook = (props) => {
 							placeholder='гг'
 						/>
 					</label>
-					<label className={css.rigthLabel}>
+					<label className={classes.rigthLabel}>
 						<span>Кол-во книг</span>
 						<Input
 							{...register('how')}
@@ -163,7 +162,7 @@ const Papperbook = (props) => {
 							placeholder='шт.'
 						/>
 					</label>
-					<label className={css.rigthLabel}>
+					<label className={classes.rigthLabel}>
 						<span>Скидка</span>
 						<Input
 							{...register('discount')}
